@@ -11,13 +11,13 @@
 
 ### Top three devices and services I use daily
 
-1. My smartphone, from the morning alarm to the last scroll at night
-2. Instagram and my group chats
-3. Google Maps and search
+1. Phone
+2. Instagram and chats
+3. Google Maps 
 
 ### A time AI surprised me
 
-One morning my phone showed me a slideshow of an old trip, set to music, that I never asked for. It felt sweet and a little uneasy. It had sorted months of photos and guessed which memory would move me.
+One time AI or AI related materials that surprised me is that how aggressive certain algorithms are. If I just watch one instagram reels, the instagram alogrithm would recommend various related reels immediately.
 
 ### What function AI plays
 
