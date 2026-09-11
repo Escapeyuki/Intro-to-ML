@@ -38,25 +38,29 @@ One morning my phone showed me a slideshow of an old trip, set to music, that I 
 **What we lose:** Privacy and a little control. My habits are tracked and sold. Systems I cannot see make choices for me. Sometimes I trust the machine over my own sense, and small skills quietly fade.
 
 ### Design an AI system
+Since AI can be very good at repitive tasks, we can try to automate parts or even the entirety of the task.
 
-**The problem:** In my area, free help exists, like community fridges, clinics, and clothing swaps, but people do not know where they are or when they open. Good resources sit empty while neighbors go without.
+**The problem:** I do not have a personal website
 
-**How AI helps:** A plain app could map nearby free resources and keep their hours and stock current. It could answer questions in everyday language, in many languages, so anyone finds help in seconds.
+**How AI helps:** Decide the tech stack, the framework, and the code
 
-**The human role:** Neighbors and local groups run it. They add resources, verify listings, and handle the calls a machine should not. The AI assists, but people stay in charge and answerable.
+**The human role:** First I decide the aesthetics of the website, like UI
 
-**Data needed:** Where free resources are, their hours, what they offer, and how busy they get. The common questions people ask. No names, faces, or private details about anyone seeking help.
+**AI Works:** AI writes the code
 
-**Privacy and consent:** Collect only what groups choose to share. Ask before listing anyone. Do not track individuals. Store little, say plainly how it is used, and let anyone remove their listing at any time.
+**Human role 2:** I design the UX of the website
+
+
 
 ### Draw the system
 
 A simple flow of the same idea:
 
-1. Neighbors and local groups add free resources
-2. AI sorts them, translates, and updates hours and stock
-3. You search by text or voice, in your own language
-4. You get a nearby answer you can actually trust
+1. Need something technical
+2. Use AI to decide the structure of the project
+3. AI produces the product
+4. Human decide how it should look and how the experience would be
+
 
 
 # Assignment 1: Image Classification
