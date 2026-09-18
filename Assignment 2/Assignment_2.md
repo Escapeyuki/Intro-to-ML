@@ -20,7 +20,7 @@ This reading shows classification is a political act, not just math. Deciding wh
 
 ## Section 2: Coding Exercise Guidelines
 
-### [p5.js sketch](https://editor.p5js.org/Escape_yuki/full/Ckqb0tI-n)
+### Reviewing and Exploring Transfer Learning
 
 ### Task
 
@@ -53,3 +53,19 @@ This again shows how important labeling things correctlt and feeding various dif
 ![Confidence discrepancy between Teachable Machine and p5](Images/redController.png)
 
 ![red controller in p5](Images/Screenshot%202026-09-18%20at%2012.45.39 AM.png)
+
+### Meme Selector
+
+### [p5.js sketch](https://editor.p5js.org/Escape_yuki/full/Ckqb0tI-n)
+
+### Meme Mirror
+
+Strike a pose and a Teachable Machine image model recognizes it and shows the
+matching meme GIF next to the webcam.
+
+### How it works
+
+memes maps each Teachable Machine class name to a gif file.
+preload() loads the model and every gif once.
+Every frame, draw() looks up memeImages[label] for the current label and
+draws it beside the video. Class names are matched case-insensitively.
