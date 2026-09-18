@@ -69,3 +69,7 @@ memes maps each Teachable Machine class name to a gif file.
 preload() loads the model and every gif once.
 Every frame, draw() looks up memeImages[label] for the current label and
 draws it beside the video. Class names are matched case-insensitively.
+
+![Example1](Images/Normal.png)
+![Example2](Images/Hi.png)
+![Example1](Images/Cry.png)
