@@ -20,6 +20,8 @@ This reading shows classification is a political act, not just math. Deciding wh
 
 ## Section 2: Coding Exercise Guidelines
 
+### [p5.js sketch](https://editor.p5js.org/Escape_yuki/full/Ckqb0tI-n)
+
 ### Task
 
 Train your own image or sound classifier using Teachable Machine. Apply the model to an interactive p5.js sketch. Use the provided code examples as a starting point.
@@ -38,14 +40,14 @@ The problem showed up with an empty chair. When only the chair was in view, the 
 
 Teachable Machine transfer learning works very well and is fast to train. However, I noticed a discrepancy. The confidence percentages shown inside Teachable Machine did not match the results I got when running the same model in my p5.js sketch.
 
+I believe that this is caused because the frame has me in it, while the training data only has the controller and my arm in the frame.
+
+This again shows how important labeling things correctlt and feeding various different background
+
 ### Visual documentation
 
-![Training the background class in Teachable Machine](images/tm-background-class.png)
+![Empty chair predicted as person](Images/Emptychair.png)
 
-![Training the person class in Teachable Machine](images/tm-person-class.png)
+![Confidence discrepancy between Teachable Machine and p5](Images/redControllerP5.png)
 
-![Empty chair predicted as person](images/tm-empty-chair.png)
-
-![p5.js sketch running the model](images/p5-sketch-result.png)
-
-![Confidence discrepancy between Teachable Machine and p5](images/confidence-discrepancy.gif)
+![Confidence discrepancy between Teachable Machine and p5](Images/redController.png)
