@@ -42,12 +42,14 @@ Teachable Machine transfer learning works very well and is fast to train. Howeve
 
 I believe that this is caused because the frame has me in it, while the training data only has the controller and my arm in the frame.
 
-This again shows how important labeling things correctlt and feeding various different background
+This again shows how important labeling things correctlt and feeding various different background is.
 
 ### Visual documentation
 
+![transferlearning](Images/transferLearning.png)
+
 ![Empty chair predicted as person](Images/Emptychair.png)
 
-![Confidence discrepancy between Teachable Machine and p5](Images/redControllerP5.png)
-
 ![Confidence discrepancy between Teachable Machine and p5](Images/redController.png)
+
+![red controller in p5](Images/Screenshot%202026-09-18%20at%2012.45.39 AM.png)
