@@ -73,6 +73,4 @@ function draw() {
   stroke(0);
   strokeWeight(6);
   ellipse(eyeX, eyeY, 300, lidGap);
-
-  
 }
