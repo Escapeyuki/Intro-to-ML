@@ -42,6 +42,13 @@ function draw() {
     line(indexFinger.x, indexFinger.y, thumb.x, thumb.y);
   }
 
+  if (lidGap > 150) {
+    openTime++;
+  } else {
+    openTime = 0;
+  }
+  const redness = map(openTime, 60, 240, 0, 255, true);
+
   const eyeX = width / 2;
   const eyeY = height / 2;
 
@@ -67,10 +74,5 @@ function draw() {
   strokeWeight(6);
   ellipse(eyeX, eyeY, 300, lidGap);
 
-  if (lidGap > 150) {
-    openTime++;
-  } else {
-    openTime = 0;
-  }
-  const redness = map(openTime, 60, 240, 0, 255, true);
+  
 }
