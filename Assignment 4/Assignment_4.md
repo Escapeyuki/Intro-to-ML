@@ -16,7 +16,6 @@ The photos of Zuckerberg were the input, not training data. I did not find where
 
 Segementaion in this case is more useful than other models. A face detector only draws a box around the head, but segmentation cuts out the hair itself. The AV Club says he explores how automation and surveillance technology can be used in unexpected ways. Using a serious research tool to collect one billionaire's haircuts is a good example of that.
 
-
 ## Sources
 
 - [ML Art library (Emil Wallner)](https://mlart.co/)
@@ -27,4 +26,10 @@ Segementaion in this case is more useful than other models. A face detector only
 - [Figaro: hair detection and segmentation in the wild (ResearchGate)](https://www.researchgate.net/publication/311758818_Figaro_hair_detection_and_segmentation_in_the_wild)
 
 # Sketch
+
 I started from the "Nooo" sketch. I wanted to make an interative sketch of an eye. I used the distance as the gap between two eyelids, so the user can control the closing and openings of the eye with their fingers. I also made color change to the pupil using map: after a certain amount of time, the pupil becomes red over time.
+I think that in the future I want to combine this sketch with last week's emoji sketch: use fingers to control a certain element of the sketch, but also use the body models to track body movement. It would be fun trying to use both models in the same sketch
+
+![eye](Images/eye.png)
+![red1](Images/red1.png)
+![red2](Images/red2.png)
