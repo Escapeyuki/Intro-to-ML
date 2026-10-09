@@ -4,15 +4,21 @@ let myResults = [];
 let bubbles = [];
 let eyesWereOpen = true;
 
+// color drift, adapted from a #Genuary2024 Day 4 "Pixel" sketch
+// same mode: every bubble drifts toward sameHue (set by eyebrows)
+// random mode: every bubble drifts toward its own random hue
+let isRandMode = false;
+let sameHue = 0;
+let colorTimeoutActive = false;
+
 function setup() {
   createCanvas(640, 480);
-  myVideo = createCapture(VIDEO, {
-    flipped: true,
-  });
+  // no library flipping here, draw() mirrors everything itself
+  myVideo = createCapture(VIDEO);
   myVideo.hide();
   myVideo.size(640, 480);
 
-  myFaceMesh = ml5.faceMesh({ maxFaces: 1, flipped: true }, modelLoad);
+  myFaceMesh = ml5.faceMesh({ maxFaces: 1 }, modelLoad);
 }
 
 function modelLoad() {
@@ -24,6 +30,11 @@ function gotFace(results) {
 }
 
 function draw() {
+  // mirror the canvas so video, face points and bubbles flip together
+  push();
+  translate(width, 0);
+  scale(-1, 1);
+
   image(myVideo, 0, 0, width, height);
 
   if (myResults.length > 0) {
@@ -42,6 +53,7 @@ function draw() {
     const browHeight =
       (face.keypoints[105].y - face.keypoints[10].y) / face.box.height;
     const hue = map(browHeight, 0.08, 0.16, 0, 300, true);
+    sameHue = hue;
 
     // open mouth wide enough -> blow a bubble
     if (mouthOpen > 0.08 && frameCount % 4 == 0) {
@@ -65,12 +77,6 @@ function draw() {
     }
     eyesWereOpen = eyesOpen;
 
-    // numbers to help tune the thresholds for your own face
-    noStroke();
-    fill(255);
-    textSize(14);
-    text("mouth " + nf(mouthOpen, 1, 3) + "  brow " + nf(browHeight, 1, 3) + "  eyes " + nf(eyeA, 1, 2) + " / " + nf(eyeB, 1, 2), 10, 20);
-
     // draw the lip outline so you can see what the model sees
     noFill();
     stroke(255);
@@ -80,11 +86,32 @@ function draw() {
     }
   }
 
+  let allCloseEnough = true;
   for (const b of bubbles) {
+    if (!b.driftColor()) {
+      allCloseEnough = false;
+    }
     b.update();
     b.show();
   }
   bubbles = bubbles.filter((b) => !b.isGone());
+  pop();
+
+  // once every bubble reaches its target color, pause, then switch modes
+  if (bubbles.length > 0 && allCloseEnough && !colorTimeoutActive) {
+    colorTimeoutActive = true;
+    setTimeout(toggleColorMode, isRandMode ? 50 : 500);
+  }
+}
+
+function toggleColorMode() {
+  isRandMode = !isRandMode;
+  if (isRandMode) {
+    for (const b of bubbles) {
+      b.newTarget();
+    }
+  }
+  colorTimeoutActive = false;
 }
 
 function eyeOpenness(face, top, bottom, corner1, corner2) {
@@ -101,9 +128,25 @@ class Bubble {
     this.y = y;
     this.size = size;
     this.hue = hue;
+    this.newTarget();
     this.speedX = random(-1.5, 1.5);
     this.speedY = random(-3, -1);
     this.popTimer = -1; // -1 = not popping, otherwise counts down to 0
+  }
+
+  newTarget() {
+    this.targetHue = random(0, 360);
+    this.rate = random(3, 10); // hue change per frame
+  }
+
+  // move hue one step toward the target, return true when close enough
+  driftColor() {
+    const target = isRandMode ? this.targetHue : sameHue;
+    const closeEnough = abs(this.hue - target) < 10;
+    if (!closeEnough) {
+      this.hue += (this.hue > target ? -1 : 1) * this.rate;
+    }
+    return closeEnough;
   }
 
   pop() {
