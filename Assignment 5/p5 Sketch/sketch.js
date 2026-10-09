@@ -38,7 +38,8 @@ function draw() {
 
     // 10 = top of forehead, 105 = left eyebrow
     // eyebrow height -> bubble color
-    const browHeight = (face.keypoints[105].y - face.keypoints[10].y) / face.box.height;
+    const browHeight =
+      (face.keypoints[105].y - face.keypoints[10].y) / face.box.height;
     const hue = map(browHeight, 0.08, 0.16, 0, 300, true);
 
     // open mouth wide enough -> blow a bubble
@@ -89,7 +90,11 @@ class Bubble {
     // little shine
     noStroke();
     fill(0, 0, 100, 0.8);
-    circle(this.x - this.size * 0.2, this.y - this.size * 0.2, this.size * 0.15);
+    circle(
+      this.x - this.size * 0.2,
+      this.y - this.size * 0.2,
+      this.size * 0.15,
+    );
     pop();
   }
 
