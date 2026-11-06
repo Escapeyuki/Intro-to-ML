@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "gemini-house",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-I",
+        "/private/tmp/claude-501/-Users-escape--claude-spares-spare-HMbb9G/0a2ce1ce-714c-4727-be0b-da4d80f8a101/scratchpad/server.py",
+        "5510",
+        "/Users/escape/Desktop/Intro-to-ML/Assignment 9/p5 Sketch",
+        "/Users/escape/Desktop/Intro-to-ML/Assignment 9/Images"
+      ],
+      "port": 5510
+    }
+  ]
+}
